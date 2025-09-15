@@ -1,0 +1,520 @@
+@import "tailwindcss";
+body, html {
+  @apply m-0 p-0 min-h-screen w-screen overflow-x-hidden;
+}
+
+/* Header.jsx */
+/* the main container */
+.header-layout{
+    @apply flex items-start gap-2 px-2 md:px-4 py-1 md:py-2 w-full fixed top-0 left-0 z-10 bg-white;
+}
+/* hamburger icon */
+.hamburger{
+    @apply text-base md:text-lg px-2 font-bold cursor-pointer;
+}
+.hamburger:hover{
+    @apply bg-gray-200 rounded-full;
+}
+/* The sidelinks present when the main sidebar is closed (links below the hamburger)*/
+.sidelinks{
+    @apply h-screen fixed top-5.5 left-0.5 flex flex-col items-center gap-12 md:gap-8;
+}
+/* links styling of the default sidebar */
+.sidelinks-links{
+    @apply relative hidden md:flex md:flex-col gap-12 md:gap-8 items-center ;
+}
+.sidelinks-link{
+    @apply flex flex-col items-center justify-center cursor-pointer text-cyan-700 hover:text-cyan-800;
+}
+.sidelinks-link-icons{
+    @apply text-xl md:text-2xl leading-none flex-shrink-0 self-center;
+}
+.sidelinks-link-text{
+    @apply text-xs;
+}
+/* Header section (title, icon, search bar and account section) */
+.main-header{
+    @apply flex flex-col gap-2 md:flex-row md:gap-0 justify-between p-2 mx-15 md:mx-10 items-center w-screen;
+}
+/* title-container for the header and image icon */
+.title-div{
+@apply flex items-center gap-1;
+}
+.Youtube-icon{
+    @apply text-cyan-600 text-xl md:text-2xl;
+}
+.Title{
+    @apply text-xl font-semibold;
+}
+/* search container for searchbar and voice command button */
+.Search-section{
+    @apply flex max-w-[700px] md:w-[50%] gap-4 items-center;
+}
+.Search-bar{
+    @apply flex items-center flex-1 p-1 md:p-2 rounded-full border border-gray-200 relative;
+}
+.search-bar-input{
+    @apply max-w-[300px] text-sm focus:outline-none px-2;
+}
+.searchbtn{
+    @apply bg-gray-100 hover:bg-gray-200 absolute right-0 h-full w-10 flex justify-center items-center rounded-r-full cursor-pointer;
+}
+
+/* Account-details section containing the account logo, create button and bell icon */
+.account-details{
+    @apply flex gap-10 items-center;
+}
+/* container containing the create button and bell icon */
+.bell-icon{
+    @apply text-lg md:text-2xl text-cyan-700;
+}
+.name-tag{
+    @apply text-white text-base md:text-lg font-medium w-6 h-6 md:w-8 md:h-8 rounded-full flex justify-center items-center bg-green-800;
+}
+.user-icon{
+    @apply text-xl md:text-2xl text-cyan-700;
+}
+
+/* SideBar.jsx (The sidebar which opens 
+when the click events happen on the hamburger (when hamburger toggle happens)) */
+
+.Toggle-sidebar{
+  @apply fixed top-0 left-0 w-full md:w-[30%] lg:w-[20%] h-full bg-gray-50 text-black z-20 overflow-y-auto;
+}
+.sidebar-container{
+    @apply flex flex-col items-start py-2 px-4 gap-5;
+}
+.side-title{
+    @apply text-cyan-700 font-semibold text-lg mb-3;
+}
+.side_nav{
+    @apply border-b-1 border-black pb-6 w-full;
+}
+.sidebar-links{
+    @apply flex flex-col gap-3 text-cyan-700 ;
+}
+.sidebar-link{
+    @apply flex gap-3 cursor-pointer px-3 py-1;
+}
+.sidebar-link-iternal{
+    @apply flex items-center gap-3 w-full ml-[-2px];
+}
+.sidebar-links>.sidebar-link:hover{
+    @apply bg-gray-200 text-cyan-800 rounded-xl;
+}
+.sidebar-link-icons{
+    @apply text-lg leading-none flex-shrink-0 self-center;
+}
+.sidebar-link-text{
+    @apply text-sm text-black;
+}
+.active-Link{
+    @apply shadow-md shadow-cyan-700/50;
+}
+/* FilterVids.jsx */
+.Filter-buttons{
+    @apply flex gap-4 md:gap-10 mt-32 pl-85 lg:pl-0 pb-2 md:mt-20 justify-center overflow-x-auto whitespace-nowrap px-4;
+}
+.Filter-button{
+    @apply text-base md:text-lg bg-gray-100 p-1 px-2 rounded-xl hover:font-medium hover:bg-gray-200 hover:text-cyan-900 cursor-pointer;
+}
+/* Search.jsx */
+.search-video-list-wrapper{
+@apply mt-20  md:ml-15 flex flex-col gap-40 ;
+}
+.Search-Container{
+    @apply flex flex-col cursor-pointer;
+}
+.Search-result{
+    @apply flex flex-col md:flex-row w-full items-start pt-5 gap-3 md:gap-10 px-5 max-h-[300px];
+}
+.Search-thumbnail{
+    @apply h-[300px] md:w-[50%] object-cover;
+}
+.Search-info{
+    @apply md:w-[40%] flex flex-col items-start gap-3 h-[300px];
+}
+.Search-title{
+    @apply text-lg font-semibold w-full md:w-[90%] leading-tight break-words text-ellipsis overflow-hidden line-clamp-2;
+}
+.search-description{
+    @apply text-gray-700 md:w-[80%] text-sm leading-tight break-words text-ellipsis overflow-hidden line-clamp-2;
+}
+/* initial-page */
+.initial-screen{
+    @apply flex flex-col mt-50 items-center w-screen h-full overflow-hidden;
+}
+.initial-text{
+    @apply text-lg md:text-2xl text-cyan-700;
+}
+.initial-icon{
+    @apply text-2xl md:text-4xl text-cyan-700;
+}
+
+/* Feed.jsx */
+.Thumbnail-container{
+@apply grid grid-cols-1 md:grid-cols-3 justify-center h-full; 
+} 
+.Thumbnail-container{
+    @apply gap-1 md:gap-2 mt-5  md:ml-15;
+}
+.thumbnail_image{
+@apply rounded-lg scale-90 md:scale-80 transition delay-150 duration-300;
+}
+.thumbnail_card{
+    @apply flex flex-col active:bg-gray-50 cursor-pointer;
+}
+.thumbnail_card:hover .thumbnail_image{
+@apply rounded-none;
+}
+.video-thumbnail-desc{
+    @apply ml-5 md:ml-9 flex flex-col items-start;
+}
+.thumbnail_title{
+@apply text-xs md:text-base font-semibold w-full md:w-[85%] leading-tight break-words text-ellipsis overflow-hidden line-clamp-2;
+}
+.channel-name{
+    @apply text-xs md:text-base w-[75%] md:w-full text-gray-600 text-ellipsis overflow-hidden line-clamp-1 cursor-pointer;
+}
+.channel-name:hover{
+    @apply font-medium hover:font-semibold;
+}
+.channel-views{
+    @apply text-xs text-gray-600 mt-[2px];
+}
+
+/* VideoPage.jsx */
+.VideoPage-container{
+    @apply flex flex-col md:flex-row ml-2 md:ml-10 mt-20 h-auto gap-20 md:gap-5;
+}
+.CurrentVideo-description{
+    @apply flex flex-col gap-3 md:w-[800px] shadow-[2px_10px_2px_rgba(17,94,89,0.30)] md:shadow-none;
+}
+/* VideoPlayer.jsx */
+.video-container{
+    @apply w-full mt-10 md:mt-0 ;
+}
+.video-display{
+    @apply rounded-xl w-full h-[200px] sm:h-[400px] md:h-[500px];
+}
+.video-desc{
+    @apply flex flex-col gap-2 md:gap-4 w-full;
+}
+.video-title{
+   @apply text-base md:text-2xl font-semibold break-words ;
+}
+.video-info{
+ @apply flex gap-3 md:gap-0 md:justify-between items-center w-full flex-wrap;   
+}
+.channel-logo{
+    @apply w-10 h-10 md:w-20 md:h-20 rounded-full;
+}
+.videoPlayer-channel-name{
+    @apply text-sm md:text-base text-gray-600 text-ellipsis overflow-hidden line-clamp-2 cursor-pointer;
+}
+.about-channel{
+@apply flex flex-row gap-2 items-start md:items-center w-full md:w-[25%];
+
+}
+.channel-info{
+    @apply flex flex-col ;
+}
+
+.Subscribe-button{
+    @apply text-sm bg-red-600 p-1 md:p-2 rounded-md hover:bg-red-700 cursor-pointer text-white;
+}
+.Like-dislike{
+    @apply flex items-center bg-gray-200 rounded-full cursor-pointer;
+}
+.Like-button{
+   @apply flex items-center gap-1 md:gap-2 p-1 md:p-2 rounded-l-full bg-gray-200 hover:bg-gray-300;
+
+}
+.divider {
+  @apply h-6 border-r border-gray-400;
+}
+.Like-count{
+    @apply text-xs md:text-sm;
+}
+.disLike-button{
+   @apply p-2 rounded-r-full hover:bg-gray-300 text-sm;
+}
+.Share-Button{
+    @apply flex items-center text-sm md:text-base gap-1 md:gap-2 p-2 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer;
+}
+.three-dots{
+    @apply p-2 bg-gray-200 hover:bg-gray-300 rounded-full;
+}
+.More-about{
+    @apply bg-gray-200 p-2 rounded-lg;
+}
+.More-about-details{
+    @apply flex gap-3 text-sm font-semibold;
+}
+
+.More-about-text{
+    @apply text-sm md:text-base line-clamp-3;
+}
+/* CommentSection.jsx */
+.Comment-input-section {
+  @apply flex flex-col gap-5 mt-5;
+}
+.Comment-textarea {
+  @apply w-full p-3 border rounded-md resize-none;
+}
+.Comment-submit-btn {
+  @apply self-end bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700;
+}
+.Comment-date {
+  @apply text-xs text-gray-600 mt-1;
+}
+
+.Comments-section-title{
+    @apply md:text-xl font-medium;
+}
+.Comment-layout{
+    @apply w-full flex items-center justify-between px-4 mb-2 py-2 bg-gray-100;
+}
+.comment-inner-div{
+    @apply flex gap-5 justify-center items-center;
+}
+.Comment{
+    @apply pt-5;
+}
+.User-Name{
+    @apply text-sm md:text-base font-bold;
+}
+.Comment-logo{
+    @apply text-lg md:text-2xl text-cyan-600;
+}
+.Comment-text{
+    @apply text-sm md:text-base;
+}
+.Comment-edit-btn, .Comment-delete-btn{
+    @apply mt-2  text-white p-2 rounded-md;
+}
+.Comment-edit-btn{
+    @apply bg-cyan-600 hover:bg-cyan-800;
+}
+.Comment-delete-btn{
+    @apply bg-black hover:bg-gray-700;
+}
+/* RecommendedVideo */
+.VideoPage-recommended{
+    @apply flex flex-col md:gap-10 sm:gap-20;
+}
+.RecommendedVideo-container{
+    @apply flex gap-5 items-start h-30 md:max-w-[400px];
+}
+.recommendedVideo-thumbnail{
+@apply rounded-md w-[50%] ;
+}
+.recommended-details{
+    @apply flex flex-col gap-2 text-sm w-full lg:w-[40%];
+}
+.recommended-title{
+    @apply  line-clamp-2 overflow-hidden break-words text-ellipsis font-semibold;
+}
+.recommended-channel, .recommended-views{
+@apply text-gray-600;
+}
+.recommended-views{
+ @apply text-xs;   
+}
+/* Error.jsx */
+.Error-div{
+    @apply h-screen w-screen flex flex-col gap-4 justify-center items-center;
+}
+.Error-text{
+    @apply text-3xl text-red-500 font-bold;
+}
+.Error-details{
+    @apply text-xl text-cyan-600 font-semibold;
+}
+.icon-error{
+    @apply text-5xl text-yellow-400 bg-black rounded-full;
+}
+.back-btn{
+    @apply p-2 bg-cyan-700 text-white text-lg font-semibold rounded-2xl hover:bg-cyan-500;
+}
+
+/* Authenticate.jsx */
+.Authenticate{
+    @apply w-screen h-screen flex justify-center items-center;
+}
+.card-wrapper{
+    @apply relative w-screen h-screen lg:w-[60%] lg:h-[85%] perspective-[1000px] mt-10 bg-gray-100 shadow-lg shadow-cyan-800/50;
+
+}
+.card-inner{
+    @apply w-full h-full transition-transform duration-700 ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.rotate-card{
+     @apply rotate-y-180;
+}
+
+.card-side{
+    @apply absolute w-full flex flex-col items-center pt-10 gap-10 backface-hidden;
+    transform-style: preserve-3d;
+}
+.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.Auth-header{
+    @apply text-cyan-600 font-semibold text-lg md:text-2xl;
+}
+.form-item-div{
+    @apply flex text-sm md:text-lg justify-between items-center w-full px-5 md:px-10;
+}
+.form-label{
+    @apply text-gray-800 break-words w-[30%];
+}
+.form-input{
+    @apply bg-white rounded-md max-w-full w-[60%] py-2 px-4  text-cyan-800 placeholder:text-cyan-600; 
+}
+.form-input:focus{
+@apply outline-none shadow-lg shadow-cyan-800/30;
+}
+.form-submit-btn{
+    @apply text-sm md:text-base bg-cyan-600 hover:bg-cyan-800 text-white p-2 md:py-2 md:px-4 rounded-md w-fit;
+}
+.auth-switch-link{
+    @apply font-medium hover:text-cyan-800;
+}
+
+/* ChannelForm.jsx */
+.ChannelForm{
+    @apply flex justify-center items-center w-screen h-screen;
+}
+.Form-component{
+   @apply mt-20 md:mt-0 h-[70%] w-full md:h-[70%] md:w-[60%] bg-gray-100 shadow-md shadow-cyan-800 p-5;
+}
+.channel-form-title{
+    @apply text-lg md:text-2xl text-cyan-800 font-medium mb-5 md:mb-0;
+}
+.channel-form{
+ @apply flex flex-col gap-10 md:gap-0 md:justify-around items-center h-full w-full;
+}
+.channel-form-item{
+    @apply flex justify-between md:justify-around items-center  w-full;
+}
+.channelInput{
+    @apply bg-white w-[70%] md:w-[60%] p-2 rounded-md text-sm md:text-base text-cyan-800 font-medium;
+}
+.channelInput:placeholder{
+    @apply text-cyan-500;
+}
+.channelInput:focus{
+    @apply outline-none shadow-md shadow-cyan-800;
+}
+.channel-label{
+    @apply w-[50%] md:w-[30%] text-sm md:text-lg font-medium md:font-semibold;
+}
+.Textarea{
+    @apply h-15 md:h-20;
+}
+.button-div{
+    @apply flex gap-5 md:gap-10;
+}
+.form-cancel-btn{
+    @apply p-2 md:py-2 md:px-4 rounded-md text-white bg-black hover:bg-gray-800 text-sm md:text-lg;
+}
+
+/* Channel-page */
+.channel-page{
+    @apply h-full w-full;
+}
+.channel-page-header{
+    @apply mt-20 flex items-center justify-center gap-10 mb-15 w-full h-60 bg-gray-100;
+}
+.channel-page-logo{
+    @apply flex items-center justify-center w-15 h-15 md:w-25 md:h-25 text-2xl md:text-5xl bg-green-800 text-white rounded-full; 
+}
+.channel-info{
+    @apply flex flex-col gap-3 w-[30%];
+}
+.channel-page-title{
+    @apply text-xl md:text-3xl text-cyan-700 font-medium;
+}
+.channel-page-description{
+    @apply text-xs md:text-base font-medium w-full md:w-[70%] break-words line-clamp-2 overflow-hidden text-ellipsis; 
+}
+.video-section{
+    @apply flex flex-col gap-20;
+}
+.video-section-header-container{
+    @apply flex justify-around items-center;
+}
+.video-section-header{
+    @apply md:text-xl font-semibold;
+}
+.no-videos{
+    @apply text-center;
+}
+.addVids{
+    @apply md:text-xl font-semibold text-cyan-700 transform transition-transform duration-300;
+
+}
+.addVids:hover{
+transform: rotate(180deg);
+}
+/* Modal Screen */
+.Modal-screen{
+    @apply fixed bg-gray-100 h-full w-full p-5 top-20 z-10;
+}
+.Modal-header{
+    @apply flex justify-between items-center text-lg md:text-2xl text-cyan-800 font-medium;
+}
+.cancel{
+    @apply transform transition-transform duration-300;
+}
+.cancel:hover{
+    transform: rotate(180deg);
+}
+
+.video-form-container{
+    @apply flex flex-col gap-10 mt-10 md:px-10;
+}
+.video-form-element{
+    @apply flex justify-between items-center;
+}
+.video-form-label{
+    @apply md:text-lg font-semibold text-cyan-700;
+}
+.modal-inputs{
+    @apply shadow-2xs shadow-cyan-800/50;
+}
+
+
+/* video display after they are created */
+.channel-video-container{
+    @apply  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 w-full;
+}
+.channel-video-flex{
+    @apply flex;
+}
+.channel-video-desc{
+    @apply text-sm;
+}
+
+.video-dropdown{
+    @apply ml-4 flex flex-col bg-gray-100 z-8 h-fit gap-2;
+}
+.drop-btn{
+    @apply text-xs md:text-base shadow-xs p-1 md:p-2 shadow-cyan-700 text-cyan-700;
+}
+/* Loader.jsx */
+.Loader-container{
+    @apply flex justify-center items-center py-4;
+}
+.loader{
+    @apply animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500;
+}
