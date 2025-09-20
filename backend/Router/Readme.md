@@ -52,10 +52,16 @@ This is the backend API for a YouTube Clone application, built with **Express.js
 
 1. **Clone the repository**
    ```bash
-    git clone https://github.com/prajwal1412/youtube_clone
+    git clone https://github.com/prajwal1412/youtube_Clone
+   ```
+  ```bash
+cd backend
+   ```
+  ```bash
+cd Router
    ```
 
-cd backend
+
 
 2. **Install Dependencies**
    npm init
@@ -65,14 +71,10 @@ cd backend
 
 - Create a .env file in the root directory with the following keys:
 
-- Port=3300
 
 # MongoDB Configuration
 
-- MONGO_USERNAME=your_mongo_username
-- MONGO_PASSWORD=your_mongo_password
-- MONGO_DBNAME=your_database_name
-- MONGO_CLUSTER=your_cluster_url
+- MONGO_URL=your_mongo_url
 
 # JWT Secret
 
